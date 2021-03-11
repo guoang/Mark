@@ -85,21 +85,21 @@ set cpo&vim
 
 " Default bindings
 
-if !hasmapto('<Plug>MarkSet', 'n')
-	nmap <unique> <silent> <leader>m <Plug>MarkSet
-endif
-if !hasmapto('<Plug>MarkSet', 'v')
-	vmap <unique> <silent> <leader>m <Plug>MarkSet
-endif
-if !hasmapto('<Plug>MarkRegex', 'n')
-	nmap <unique> <silent> <leader>r <Plug>MarkRegex
-endif
-if !hasmapto('<Plug>MarkRegex', 'v')
-	vmap <unique> <silent> <leader>r <Plug>MarkRegex
-endif
-if !hasmapto('<Plug>MarkClear', 'n')
-	nmap <unique> <silent> <leader>n <Plug>MarkClear
-endif
+" if !hasmapto('<Plug>MarkSet', 'n')
+"   nmap <unique> <silent> <leader>m <Plug>MarkSet
+" endif
+" if !hasmapto('<Plug>MarkSet', 'v')
+"   vmap <unique> <silent> <leader>m <Plug>MarkSet
+" endif
+" if !hasmapto('<Plug>MarkRegex', 'n')
+"   nmap <unique> <silent> <leader>r <Plug>MarkRegex
+" endif
+" if !hasmapto('<Plug>MarkRegex', 'v')
+"   vmap <unique> <silent> <leader>r <Plug>MarkRegex
+" endif
+" if !hasmapto('<Plug>MarkClear', 'n')
+"   nmap <unique> <silent> <leader>n <Plug>MarkClear
+" endif
 
 nnoremap <silent> <Plug>MarkSet   :call
 	\ <sid>MarkCurrentWord()<cr>
@@ -133,12 +133,12 @@ nnoremap <silent> <Plug>MarkClear :call
 "       do a \*; otherwise (\/ is the
 "       most recently used), do a \/.
 
-nnoremap <silent> <leader>* :call <sid>SearchCurrentMark()<cr>
-nnoremap <silent> <leader># :call <sid>SearchCurrentMark("b")<cr>
-nnoremap <silent> <leader>/ :call <sid>SearchAnyMark()<cr>
-nnoremap <silent> <leader>? :call <sid>SearchAnyMark("b")<cr>
-nnoremap <silent> * :if !<sid>SearchNext()<bar>execute "norm! *"<bar>endif<cr>
-nnoremap <silent> # :if !<sid>SearchNext("b")<bar>execute "norm! #"<bar>endif<cr>
+" nnoremap <silent> <leader>* :call <sid>SearchCurrentMark()<cr>
+" nnoremap <silent> <leader># :call <sid>SearchCurrentMark("b")<cr>
+" nnoremap <silent> <leader>/ :call <sid>SearchAnyMark()<cr>
+" nnoremap <silent> <leader>? :call <sid>SearchAnyMark("b")<cr>
+" nnoremap <silent> * :if !<sid>SearchNext()<bar>execute "norm! *"<bar>endif<cr>
+" nnoremap <silent> # :if !<sid>SearchNext("b")<bar>execute "norm! #"<bar>endif<cr>
 
 command! -nargs=? Mark call s:DoMark(<f-args>)
 
